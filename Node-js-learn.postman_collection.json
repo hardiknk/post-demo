@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "74a0bc49-a068-48dd-bff3-62e283b26f25",
+		"name": "Node-js-learn",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19733617"
+	},
+	"item": [
+		{
+			"name": "Olympics-demo",
+			"item": [
+				{
+					"name": "Add-men-ranking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ranking\" : 16,\n    \"name\" : \"Harsh Mehta\",\n    \"dob\" : \"2016-12-13T06:55:24.698Z\",\n    \"country\" : \"India\",\n    \"score\" : 2,\n    \"event\" :  \"100 Meter\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8005/add-men-ranking",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"add-men-ranking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getManRanking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8005/get-men-ranking",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"get-men-ranking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-man-by-id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8005/get-men-ranking/63edd45da4a24dcf4512bf51",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"get-men-ranking",
+								"63edd45da4a24dcf4512bf51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-man-ranking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"country\" : \"Amerika\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8005/update-men-ranking/63edd45da4a24dcf4512bf51",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"update-men-ranking",
+								"63edd45da4a24dcf4512bf51"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-man-ranking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\" : \"63edd299936a001ab825f073\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8005/delete-man-ranking",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"delete-man-ranking"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "all",
+			"item": [
+				{
+					"name": "add-student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Hardik Test\",\n    \"sur_name\" : \"Kanzariya\",\n    \"email\" : \"hardik.kanzariya@yudiz.coms\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8005/add-student",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"add-student"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-students",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8005/get-students",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"get-students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-student",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8005/delete-student/63ecc7ccacca61cad477354e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"delete-student",
+								"63ecc7ccacca61cad477354e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-student",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sur_name\" : \"Kanzariya \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8005/update-student/63eb838dea9ff3ffd08688e0",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8005",
+							"path": [
+								"update-student",
+								"63eb838dea9ff3ffd08688e0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "demo-post",
+			"item": [
+				{
+					"name": "add-post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "ddddd dd122",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Hello Description for the post",
+									"type": "text"
+								},
+								{
+									"key": "post_image",
+									"type": "file",
+									"src": "/Users/yudizsolutions/Downloads/book_img/download (1).jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5003/post/add-post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5003",
+							"path": [
+								"post",
+								"add-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5003/post/get-all-post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5003",
+							"path": [
+								"post",
+								"get-all-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\" : \"63fc89391a9258cec1b40592\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5003/post/delete-post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5003",
+							"path": [
+								"post",
+								"delete-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-post",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "dddd update",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "asdfadsf",
+									"type": "text"
+								},
+								{
+									"key": "post_image",
+									"type": "file",
+									"src": "/Users/yudizsolutions/Downloads/book_img/TheLionWitchWardrobe(1stEd).jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5003/post/update-post/63fcacade34c5fe9018c2c3e",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5003",
+							"path": [
+								"post",
+								"update-post",
+								"63fcacade34c5fe9018c2c3e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
