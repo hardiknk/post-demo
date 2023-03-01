@@ -4,12 +4,7 @@ const app = express()
 const path = require('path')
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 require("./db/connect");
-const postRoute = require("../src/routes/postRoute");
-
+require("../src/routes/routes")(app);
 const port = process.env.PORT || 5002;
-
 app.use(bodyParser.json());
-
-app.use('/post', postRoute);
-
 app.listen(port);

@@ -6,8 +6,9 @@ const { fileUpload } = require('../helpers/common');
 const postValidator = require("../validation/postvalidator");
 const validate = require("../middleware/index");
 
-router.get('/get-all-post', postService.getAllPost);
-router.post("/add-post", fileUpload.single("post_image"), postValidator.creatPost, validate, postService.addPost);
-router.post("/delete-post", postValidator.deletePost, validate, postService.deletePost);
-router.post("/update-post/:id",fileUpload.single("post_image"),postValidator.updatePost, validate, postService.updatePost);
+router.get("/posts", postService.getAllPost);
+router.get("/posts/:id", postService.getPost);
+router.post("/posts", fileUpload.single("post_image"), postValidator.creatPost, validate, postService.addPost);
+router.delete("/posts/:id", postService.deletePost);
+router.patch("/posts/:id", fileUpload.single("post_image"), postValidator.updatePost, validate, postService.updatePost);
 module.exports = router;

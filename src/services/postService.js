@@ -7,12 +7,28 @@ class postService {
 
     async getAllPost(req, res) {
         try {
-
             // const postData = await Post.find(); // select all the records
-            const postData = await Post.find({}, { _id: 0, title: 1, description: 1, post_image: 1 }); //select the particular columns 
+            const postData = await Post.find({}, { _id: 0, title: 1, _id: 1, description: 1, post_image: 1 }); //select the particular columns 
             res.status(400).jsonp({
                 data: postData,
-                message: "Post records fetched successfully.",
+                message: "Posts records fetched successfully.",
+            });
+        } catch (error) {
+            res.status(400).jsonp({
+                data: null,
+                message: error
+            });
+        }
+    }
+
+    async getPost(req, res) {
+        try {
+            const _id = req.params.id;
+            // res.send("hii hardik kanzariya");
+            const postData = await Post.find({ _id: _id }, { _id: 0, title: 1, description: 1, post_image: 1 });
+            res.status(400).jsonp({
+                data: postData,
+                message: "Posts records fetched successfully.",
             });
         } catch (error) {
             res.status(400).jsonp({
@@ -52,10 +68,9 @@ class postService {
 
     async deletePost(req, res) {
         try {
-            const _id = req.body.id;
-            const isPost = await Post.findById(_id);
+            const id = req.params.id;
+            const isPost = await Post.findByIdAndDelete(id);
             if (isPost) {
-                await isPost.delete();
                 res.status(200).json({ data: null, message: "Post is deleted successfully." });
             }
             else {
@@ -74,6 +89,7 @@ class postService {
         try {
             const { title, description } = req.body;
             const _id = req.params.id;
+            // findByIdAndUpdate
             const postData = await Post.findById({ _id });
 
             let fileName = "";

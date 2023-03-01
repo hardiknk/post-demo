@@ -6,8 +6,8 @@ const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         if (!fs.existsSync(pathF)) {
             fs.mkdirSync(pathF);
-          }
-        cb(null, 'images/');
+        }
+        cb(null, pathF);
     },
     filename: function (req, file, cb) {
         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
@@ -31,4 +31,4 @@ const fileUpload = multer({
 });
 
 
-module.exports = {fileUpload};
+module.exports = { fileUpload };
